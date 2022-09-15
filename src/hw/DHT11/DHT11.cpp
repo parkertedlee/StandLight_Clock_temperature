@@ -1,6 +1,7 @@
 #include "DHT11.h"
 #include <wiringPi.h>
 #include <iostream>
+#include "DHT_Data.h"
 
 DHT11::DHT11(int pin)
     : pinNumber(pin)
