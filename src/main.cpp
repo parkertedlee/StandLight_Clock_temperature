@@ -30,7 +30,7 @@ int main()
     DHT11 dht(7);
     LCD lcd(new I2C("/dev/i2c-1",0x27));
     View view(&led1,&led2,&led3,&led4,&led5,&lcd);
-    TempHumidView tempHumidView(&lcd);
+    TempHumidView tempHumidView(&led1,&led2,&led3,&led4,&led5,&lcd);
     ClockView clockView(&lcd);
     Service service(&view);
     ClockService clockService(&clockView);
@@ -43,9 +43,9 @@ int main()
     while (1)
     {
         listener.checkEvent();
-        view.lightView();
+        if(dht.dhtData.Temp < 26) view.lightView();
 
-        delay(1000);
+        delay(50);
     }
 
     return 0;

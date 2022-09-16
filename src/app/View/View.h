@@ -1,10 +1,12 @@
 #ifndef __VIEW_H__
 #define __VIEW_H__
 
+#include <time.h>
 #include <string>
 #include "Led.h"
 #include "LightState.h"
 #include "LCD.h"
+
 
 class View
 {

@@ -24,6 +24,7 @@ void View::setState(int state)
 
 void View::lightView()
 {
+    float temp;
     switch (lightState)
     {
         case LIGHT_OFF:
@@ -55,8 +56,9 @@ void View::lightView()
 
 void View::lightOn_1()
 {
+     
     char buff[30];
-     sprintf(buff, "1                   ");
+     sprintf(buff, "1  ");
         lcd->WriteStringXY(0,0,buff);
     lcd->backLightOn();
     light1->On();
@@ -64,27 +66,31 @@ void View::lightOn_1()
     light3->Off();
     light4->Off();
     light5->Off();
+    
 }
 
 
 void View::lightOn_2()
 {
     char buff[30];
-     sprintf(buff, "2                   ");
+     sprintf(buff, "2  ");
         lcd->WriteStringXY(0,0,buff);
+         lcd->backLightOn();
     light1->On();
     light2->On();
     light3->Off();
     light4->Off();
     light5->Off();
+            
 }
 
 
 void View::lightOn_3()
 {
     char buff[30];
-    sprintf(buff, "3                   ");
+    sprintf(buff, "3  ");
         lcd->WriteStringXY(0,0,buff);
+         lcd->backLightOn();
     light1->On();
     light2->On();
     light3->On();
@@ -96,8 +102,9 @@ void View::lightOn_3()
 void View::lightOn_4()
 {
     char buff[30];
-         sprintf(buff, "4                   ");
+         sprintf(buff, "4  ");
         lcd->WriteStringXY(0,0,buff);
+         lcd->backLightOn();
     light1->On();
     light2->On();
     light3->On();
@@ -107,10 +114,11 @@ void View::lightOn_4()
 
 
 void View::lightOn_5()
-{
+{   
     char buff[30];
-        sprintf(buff, "5                   ");
+        sprintf(buff, "5  ");
         lcd->WriteStringXY(0,0,buff);
+         lcd->backLightOn();
     light1->On();
     light2->On();
     light3->On();
@@ -121,7 +129,7 @@ void View::lightOn_5()
 void View::lightOff()
 {
     char buff[30];
-    sprintf(buff, "oFF                  ");
+    sprintf(buff, "oFF  ");
         lcd->WriteStringXY(0,0,buff);
     lcd->backLightOff();
     light1->Off();
